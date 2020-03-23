@@ -14,6 +14,7 @@ class User():
     """
 
     __password = None
+
     def __init__(self):
         """
         Initialize a new user:
@@ -49,7 +50,6 @@ class User():
         - `False` if `__password` is `None`
         - Compare `__password` and the MD5 value of `pwd`
         """
-        pwd = str(pwd)
         if pwd is None or type(pwd) is not str:
             return False
         elif self.__password is None:
@@ -84,7 +84,7 @@ if __name__ == '__main__':
     if user_2.password is not None:
         print("User.password should be None if setter to an integer")
 
-    if not user_1.is_valid_password(u_pwd):
+    if user_1.is_valid_password(u_pwd):
         print("is_valid_password should return True if it's the right \
 password")
 
